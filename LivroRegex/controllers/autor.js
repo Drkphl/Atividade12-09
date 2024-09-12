@@ -11,7 +11,7 @@ exports.createAutor = async (req, res) => {
 
 exports.getAutor = async (req, res) => {
     try {
-        const Autor = await autor.find().populate('id_autor');
+        const Autor = await autor.find();
         res.status(200).json(Autor);
     } catch (error) {
         res.status(400).json({ error: 'Erro ao buscar Autor' });

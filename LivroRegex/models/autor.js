@@ -3,7 +3,7 @@ const Schema = db.Schema;
 
 const AutorSchema = new Schema({
     nome: { type: String, required: true },
-    endereço: { type: Object, required: true },
+    cep: { type: Object, required: true, minLength: 8, maxLength: 8 },
     email: {
         type: String,
         validate: {
