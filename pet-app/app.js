@@ -6,7 +6,7 @@ const pet_routes = require('./routes/pet_route.js');
 
 const app = express();
 
-//retirei a conexão da 
+//retirei a conexão da
 // Conectar ao banco de dados
 // connectDB();
 
@@ -20,5 +20,5 @@ app.use('/pets', pet_routes);
 // Porta
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+    console.log(`Servidor rodando na porta ${PORT}`);
 });
