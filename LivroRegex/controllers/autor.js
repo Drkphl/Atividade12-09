@@ -20,7 +20,7 @@ exports.getAutor = async (req, res) => {
 
 exports.getAutorById = async (req, res) => {
     try {
-        const Autor = await autor.findById(req.params.id).populate('id_autor');
+        const Autor = await autor.findById(req.params.id);
         res.status(200).json(Autor);
     } catch (error) {
         res.status(404).json({ error: 'autor não encontrado' });

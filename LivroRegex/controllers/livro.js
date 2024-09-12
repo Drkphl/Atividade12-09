@@ -20,7 +20,7 @@ exports.getLivros = async (req, res) => {
 
 exports.getLivroById = async (req, res) => {
     try {
-        const livro = await Livro.findById(req.params.id).populate('id_livro');
+        const livro = await Livro.findById(req.params.id);
         res.status(200).json(livro);
     } catch (error) {
         res.status(404).json({ error: 'Livro não encontrado' });
