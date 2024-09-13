@@ -11,7 +11,7 @@ exports.createLivro = async (req, res) => {
 
 exports.getLivros = async (req, res) => {
     try {
-        const livros = await Livro.find().populate('id_livro');
+        const livros = await Livro.find();
         res.status(200).json(livros);
     } catch (error) {
         res.status(400).json({ error: 'Erro ao buscar livros' });

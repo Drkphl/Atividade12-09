@@ -1,18 +1,18 @@
-const autor = require('../models/autor.js');
+const Autor = require('../models/autor.js');
 
 exports.createAutor = async (req, res) => {
     try {
-        const Autor = await autor.create(req.body);
-        res.status(201).json(Autor);
+        const autor = await Autor.create(req.body);
+        res.status(201).json(autor);
     } catch (error) {
         res.status(400).json({ error: 'Erro ao criar Autor' });
     }
 };
 
-exports.getAutor = async (req, res) => {
+exports.getAutores = async (req, res) => {
     try {
-        const Autor = await autor.find();
-        res.status(200).json(Autor);
+        const autor = await Autor.find();
+        res.status(200).json(autor);
     } catch (error) {
         res.status(400).json({ error: 'Erro ao buscar Autor' });
     }
@@ -20,17 +20,17 @@ exports.getAutor = async (req, res) => {
 
 exports.getAutorById = async (req, res) => {
     try {
-        const Autor = await autor.findById(req.params.id);
-        res.status(200).json(Autor);
+        const autor = await Autor.findById(req.params.id);
+        res.status(200).json(autor);
     } catch (error) {
-        res.status(404).json({ error: 'autor não encontrado' });
+        res.status(404).json({ error: 'Autor não encontrado' });
     }
 };
 
 exports.updateAutor = async (req, res) => {
     try {
-        const Autor = await autor.findByIdAndUpdate(req.params.id, req.body, { new: true });
-        res.status(200).json(Autor);
+        const autor = await Autor.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        res.status(200).json(autor);
     } catch (error) {
         res.status(400).json({ error: 'Erro ao atualizar Autor' });
     }
@@ -38,7 +38,7 @@ exports.updateAutor = async (req, res) => {
 
 exports.deleteAutor = async (req, res) => {
     try {
-        await autor.findByIdAndDelete(req.params.id);
+        await Autor.findByIdAndDelete(req.params.id);
         res.status(204).json();
     } catch (error) {
         res.status(400).json({ error: 'Erro ao deletar Autor' });

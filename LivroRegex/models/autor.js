@@ -15,6 +15,6 @@ const AutorSchema = new Schema({
     },
 });
 console.log('Conectado');
-const Livro = db.model('Livro', AutorSchema);
+const Autor = db.model('Autor', AutorSchema);
 
-module.exports = Livro;
+module.exports = Autor;
